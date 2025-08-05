@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "holyadmins",
+  "version": "${version}",
+  "name": "holyadmins",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/holyadmins/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "me.jlime.holyadmins.client.HolyadminsDataGenerator"
+    ],
+    "client": [
+      "me.jlime.holyadmins.client.HolyadminsClient"
+    ],
+    "main": [
+      "me.jlime.holyadmins.Holyadmins"
+    ]
+  },
+  "mixins": [
+    "holyadmins.mixins.json",
+    {
+      "config": "holyadmins.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
